@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <th>Наименование платежа</th>
+    <th>Стоимость</th>
+    <th *ngFor="let month of months">{{month}}</th>
+    <th>Удалить</th>
+  </thead>
+  <tbody>
+    <app-table-row 
+      *ngFor="let item of payments" 
+      [payment]="item" 
+      (select)="selectPoint($event)" 
+      (remove)="removePayment(item)">
+    </app-table-row>
+  </tbody>
+
+</table>
+
+<span>Израсходовано средств</span>
+<span>{{total}}</span>
