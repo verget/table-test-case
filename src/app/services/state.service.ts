@@ -33,7 +33,7 @@ export class StateService {
     // we assaign a new copy of payments by adding a new payment to it 
     // with automatically assigned ID ( its ok only for test case, I know )
     this.payments = [
-      ...this.payments, 
+      ...this.payments,
       {
         id: this.payments.length + 1, 
         title, 
@@ -57,5 +57,4 @@ export class StateService {
     } 
     return 0;
   }
-
 }
