@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Output, EventEmitter, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output, EventEmitter, Input, OnInit } from '@angular/core';
 import { Payment } from 'src/app/models/Payment';
 import { Month } from 'src/app/models/Month';
 
@@ -8,13 +8,20 @@ import { Month } from 'src/app/models/Month';
   styleUrls: ['./table-row.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TableRowComponent {
+export class TableRowComponent implements OnInit {
 
   @Input() payment: Payment;
   @Input() points: Month[];
   @Output() remove = new EventEmitter();
   @Output() select = new EventEmitter();
+
+  public averagePrice: number;
+
   constructor() { }
+
+  ngOnInit(): void {
+    this.averagePrice = this.payment.dayPrice * 30;
+  }
 
   selectPoint(pointId, event) {
     this.select.emit({

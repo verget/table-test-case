@@ -1,8 +1,9 @@
-<td>{{payment.title}}</td>
-<td>{{payment.worth}}</td>
+<td>{{ payment.title }}</td>
+<td>{{ averagePrice }} ({{payment.dayPrice}} * 30)</td>
 <td *ngFor="let item of points">
   <input type="checkbox" (change)="selectPoint(item.id, $event)" />
 </td>
 <td>
-  <button type="button" (click)="removePayment()">del</button>
+  <!-- <button type="button" (click)="removePayment()">del</button> -->
+  <img src="../../../assets/icons/cancel-button.svg" (click)="removePayment()" class="icon">
 </td>
