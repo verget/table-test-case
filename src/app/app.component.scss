@@ -1,0 +1,41 @@
+.container {
+  margin: 10px 20px;
+}
+
+.payment-form {
+  margin-bottom: 20px;
+  margin-top: 40px;
+  display: flex;
+  width: 60%;
+
+  input {
+    background-color: #fff;
+    flex: 2;
+    font-weight: 300;
+    font-style: normal;
+    color: #023859;
+    line-height: 1.1;
+    font-size: 14px;
+    padding: 10px;
+    padding-left: 20px;
+    margin-right: 10px;
+
+    &:focus {
+      box-shadow: 0 0 12px rgba(0,0,0,.2);
+    }
+  }
+
+  button {
+    flex: 1;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #01579B;
+    border: none;
+    &:disabled {
+      background-color:#039BE5;
+      cursor: no-drop;
+    }
+  }
+}

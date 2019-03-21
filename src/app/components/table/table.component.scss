@@ -1,0 +1,33 @@
+table {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  border-collapse: collapse;
+  color: black;
+
+  tr {
+    background-color: #fff;
+  }
+
+  tr:nth-child(even){
+    background-color: #F5F5F5;
+  }
+  thead tr {
+    background-color: #362F4A;
+    th {
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.2;
+      font-weight: unset;
+      padding: 5px;
+    }
+  }
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+}

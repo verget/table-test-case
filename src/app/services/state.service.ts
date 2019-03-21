@@ -29,13 +29,22 @@ export class StateService {
     this._payments.next(val);
   }
 
-  addPayment(title: string, worth: number) {
+  addPayment(title: string, dayPrice: number) {
     // we assaign a new copy of payments by adding a new payment to it 
     // with automatically assigned ID ( its ok only for test case, I know )
     this.payments = [
       ...this.payments, 
-      {id: this.payments.length + 1, title, worth}
+      {
+        id: this.payments.length + 1, 
+        title, 
+        dayPrice,
+        worth: 0
+      }
     ];
+  }
+
+  changeWorth(id: number, value: number) {
+    this.payments.find(payment => payment.id === id).worth += value;
   }
 
   removePayment(id: number) {
@@ -43,7 +52,10 @@ export class StateService {
   }
 
   get paymentTotal(): number {
-    return this.payments.reduce((summ, item) => summ + item.worth , 0);
+    if (this.payments.length) {
+      return this.payments.reduce((summ, item) => summ + item.worth , 0);
+    } 
+    return 0;
   }
 
 }

@@ -1,9 +1,11 @@
-<h2>Состояние платежей</h2>
+<div class="container">
+    <h2>Состояние платежей</h2>
 
-<form>
-  <input type="text" placeholder="Наименование платежа">
-  <input type="text" placeholder="Стоимость за день">
-  <button type="submit">Добавить</button>
-</form>
-
-<app-table></app-table>
+    <form [formGroup]="paymentForm" (ngSubmit)="submitPayment()" class="payment-form">
+      <input type="text" placeholder="Наименование платежа" formControlName="title">
+      <input type="number" placeholder="Стоимость за день" formControlName="dayPrice">
+      <button type="submit" [disabled]="!paymentForm.valid">Добавить</button>
+    </form>
+    
+    <app-table [payments]="state.payments$ | async" [points]="months"></app-table>
+</div>

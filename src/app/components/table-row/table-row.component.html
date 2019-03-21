@@ -1,10 +1,8 @@
-<tr>
-  <td>{{payment.title}}</td>
-  <td>{{payment.worth}}</td>
-  <td *ngFor="let item of months">
-    <input type="checkbox" #check (change)="selectPoint(check.value)"></input>
-  </td>
-  <td>
-    <button type="button" (click)="delete.emit()">del</button>
-  </td>
-</tr>>
+<td>{{payment.title}}</td>
+<td>{{payment.worth}}</td>
+<td *ngFor="let item of points">
+  <input type="checkbox" (change)="selectPoint(item.id, $event)" />
+</td>
+<td>
+  <button type="button" (click)="removePayment()">del</button>
+</td>

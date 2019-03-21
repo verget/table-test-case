@@ -1,5 +1,6 @@
 export interface Payment {
-  id: number,
+  id?: number,
   title: string,
+  dayPrice: number,
   worth: number
 }

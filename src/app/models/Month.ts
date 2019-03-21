@@ -1,4 +1,5 @@
 export interface Month {
   id: number,
-  title: string
+  title: string,
+  dayCount: number
 }
