@@ -4,11 +4,11 @@ Simple single page web application that shows table information by given rules
 
 ## Features
 
-- Add rows
-- Remow rows
-- Show added rows
-- Total summ calculation by given rules
-- Amazing design
+- You can add rows
+- You can remove rows
+- You can see added rows
+- Total summ will calculate by given rules
+- Application has amazing design (no)
 
 ## Technology
 
